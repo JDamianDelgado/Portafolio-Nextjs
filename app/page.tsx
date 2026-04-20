@@ -30,6 +30,14 @@ export default function Home() {
             <Link href="/contacto" className={styles.secondaryAction}>
               {copy.home.secondaryAction}
             </Link>
+            <a
+              className={styles.secondaryAction}
+              href="/CV/Joaquin-Delgado-FullStackDeveloper.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.home.thirdAction}
+            </a>
           </div>
 
           <div className={styles.statsGrid}>
