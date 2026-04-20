@@ -1,0 +1,168 @@
+export const proyectos = [
+  {
+    slug: "portafolio-react",
+    title: "Portafolio personal en React",
+    description:
+      "Desarrollo de un portafolio personal utilizando React, con diseño responsive y animaciones. El proyecto incluye secciones de presentación, habilidades, proyectos destacados y contacto, con un enfoque en la experiencia del usuario y la estética visual.",
+    technologies: ["React", "CSS", "JavaScript", "Vite", "Framer Motion"],
+    images: "/image/proyectos/Portafolio/image.png",
+    url: "https://portafolio-20-eta.vercel.app/",
+  },
+  {
+    slug: "gestor-tareas-app",
+    title: "Gestor de tareas con CRUD y estado",
+    description:
+      "Aplicación de gestión de tareas con listado, creación, edición y eliminación. El frontend está hecho con Next.js (React) y TypeScript, con estilos en Tailwind CSS. El backend es una API en FastAPI que expone endpoints REST y persiste datos en Supabase (PostgreSQL), se realiza deploy en Vercel, Render y Supabase para una experiencia completa.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Python",
+      "FastAPI",
+      "Supabase",
+      "PostgreSQL",
+    ],
+    images: "/image/proyectos/GestorTareas/image.png",
+    url: "https://gestor-tareas-nine.vercel.app/",
+  },
+  {
+    slug: "agenda-turnos-app",
+    title: "Agenda de turnos con gestión completa",
+    description:
+      "Aplicación de agenda de turnos que permite a usuarios registrarse y reservar, a profesionales crear y administrar horarios de atención, y a administradores gestionar usuarios y turnos. Desarrollada con React, Node.js, NestJS y PostgreSQL, incluye autenticación JWT, manejo global de estados con Redux, tipado con TypeScript y notificaciones por correo electrónico.",
+    technologies: [
+      "React",
+      "Redux",
+      "NodeJS",
+      "PostgreSQL",
+      "NestJS",
+      "JWT",
+      "Typescript",
+    ],
+    images: "/image/proyectos/AgendaTurnos/agenda.png",
+    url: "https://pagina-elizabeth.vercel.app/",
+  },
+  {
+    slug: "Analisis de datos con python",
+    title: "Análisis de datos con Python",
+    description:
+      "Aplicación para el análisis de datos utilizando Python y bibliotecas como Pandas y NumPy. Permite la manipulación y visualización de datos, incluyendo gráficos y estadísticas descriptivas.",
+    technologies: [
+      "Dataset(kaggle)",
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Streamlit",
+    ],
+    images: "/image/proyectos/AnalisisDatos/image.png",
+    url: "https://xznaf8p5ea7utwdm6som6t.streamlit.app/",
+  },
+  {
+    slug: "Clon de chat",
+    title: "Clon de chat con respuesta automatica",
+    description:
+      "Clon de un sistema de mensajería donde los usuarios pueden agregar contactos, enviar y recibir mensajes en tiempo real, y ver respuestas automáticas. Desarrollado en React con hooks y estados, simulando un backend con mock. Además, es responsive para diferentes dispositivos.",
+
+    technologies: ["React", "Hooks"],
+    images: "/image/proyectos/ClonChat/image.png",
+    url: "https://clone-chat-react.vercel.app/",
+  },
+  {
+    slug: "Simulador chat Angular",
+    title: "Clon de chat con Angular",
+    description:
+      "Simulador de chat desarrollado con una arquitectura basada en componentes, servicios y pipes, utilizados para mostrar la última conexión y la fecha de los mensajes. La aplicación permite crear y buscar chats por nombre, asignar imágenes mediante una URL genérica y utiliza estilos CSS individuales por componente. Los datos se manejan mediante un mock precargado y los componentes se integran a través de un Layout para ofrecer una interfaz clara y amigable",
+
+    technologies: ["Angular", "Routes", "Pipes", "Servicios", "Componentes"],
+    images: "/image/proyectos/ClonChatAngular/image.png",
+    url: "https://angular-trabajo-final-chat-utn.vercel.app/chats/19",
+  },
+  {
+    slug: "manejo-de-api",
+    title: "Manejo de APIs con React",
+    description:
+      "Implementación y consumo de una API RESTful desarrollada con FastAPI, permitiendo manipulación eficiente de datos desde React, enrutamiento dinámico y diseño responsivo utilizando Tailwind CSS.",
+    technologies: ["React", "FastAPI", "Tailwind"],
+    images: "/image/proyectos/Apis/img1.png",
+    url: "https://github.com/JDamianDelgado/ApiRestFul-Practice",
+  },
+  {
+    slug: "dragon-ballz-react",
+    title: "Dragon Ball Z - Explorador de Personajes",
+    description:
+      "Aplicación interactiva desarrollada con React que permite explorar personajes del universo Dragon Ball Z. Incluye cards con efectos de zoom, vista detallada de cada personaje, y diseño totalmente responsive. Se trabajó con peticiones a API externas, manejo de estados, y componentes reutilizables.",
+    technologies: ["React", "Axios", "Redux Toolkit", "CSS", "Vite"],
+    images: "/image/proyectos/ReactApiExterna/captura1.png",
+    url: "https://react-vite-consumiendo-una-api-exte-five.vercel.app/",
+  },
+  {
+    slug: "ecommerce",
+    title: "E-commerce para Petshop",
+    description:
+      "Desarrollo de una plataforma de comercio electrónico utilizando NestJS con base de datos PostgreSQL alojada en Supabase, implementando autenticación JWT y pagos. El frontend fue construido con React y desplegado en Vercel para asegurar una experiencia rápida y responsiva.",
+    technologies: [
+      "React",
+      "NestJS",
+      "PostgreSQL",
+      "Supabase",
+      "Vercel",
+      "JWT",
+    ],
+    images: "/image/proyectos/petshop/img2.png",
+    url: "https://eccommerce-pet-shop-w8px.vercel.app/",
+  },
+  {
+    slug: "gestor-de-turnos",
+    title: "Gestor de Turnos con postgres ",
+    description:
+      "Desarrollo de un sistema de gestión de turnos médicos utilizando NestJS con base de datos PostgreSQL y autenticación JWT, alojado en Supabase. El frontend implementado con React y alojado en Vercel.",
+    technologies: [
+      "React",
+      "NestJS",
+      "PostgreSQL",
+      "Supabase",
+      "Vercel",
+      "JWT",
+    ],
+    images: "/image/proyectos/gestorTurnos/image.png",
+    url: "https://github.com/JDamianDelgado/GestionDeTurnos",
+  },
+  {
+    slug: "backend-sitio-web",
+    title: "Backend para plataforma de cementerio",
+    description:
+      "Formé parte del equipo de backend en el desarrollo de una plataforma de gestión de cementerios, permitiendo la administración de sepulturas, mantenimiento y organización de eventos conmemorativos de forma digital y eficiente.",
+    technologies: [
+      "NestJS",
+      "PostgreSQL",
+      "Supabase",
+      "JWT",
+      "Nodemailer",
+      "Mercado Pago",
+      "Autenticación con Google",
+      "POO",
+    ],
+    images: "/image/proyectos/valle de paz/image.png",
+    url: "https://github.com/JDamianDelgado/ValleDePaz",
+  },
+  {
+    slug: "registro-react",
+    title: "Formulario de Registro en React",
+    description:
+      "Proyecto práctico enfocado en el desarrollo de formularios interactivos con validación, manejo de estados y diseño responsive. Permite mejorar la experiencia del usuario y afianzar el uso de hooks y componentes controlados en React.",
+    technologies: ["React", "React Router", "React DOM", "CSS"],
+    images: "/image/proyectos/React/image.png",
+    url: "https://github.com/JDamianDelgado/Registro-React",
+  },
+
+  {
+    slug: "Proximamente",
+    title: "",
+    description: "Proximamente nuevos proyectos con nuevas tecnologias...",
+    technologies: ["Python", "AWS", "Angular", "y muchos mas..."],
+    images: "/image/proyectos/image.png",
+    url: "https://github.com/JDamianDelgado",
+  },
+];

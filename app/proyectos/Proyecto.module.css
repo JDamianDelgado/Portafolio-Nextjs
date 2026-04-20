@@ -1,0 +1,21 @@
+.container {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0 4rem;
+}
+
+.hero {
+  max-width: 54rem;
+}
+
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+@media (max-width: 980px) {
+  .cardsContainer {
+    grid-template-columns: 1fr;
+  }
+}

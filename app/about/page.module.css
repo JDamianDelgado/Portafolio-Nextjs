@@ -1,0 +1,106 @@
+.page {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0 4rem;
+}
+
+.hero,
+.sectionGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.25rem;
+}
+
+.summary,
+.panel,
+.timelineCard {
+  border-radius: 28px;
+}
+
+.summary {
+  padding: 1.6rem;
+  align-self: end;
+}
+
+.summaryLabel {
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.summary strong {
+  display: block;
+  margin: 0.85rem 0 0.65rem;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.summary p,
+.copy,
+.timelineCard p,
+.strengthItem p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.panel {
+  padding: 1.6rem;
+}
+
+.strengths {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.strengthItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.strengthItem span {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), #f1b464);
+  box-shadow: 0 0 0 6px var(--accent-soft);
+}
+
+.timeline {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.timelineGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.timelineCard {
+  padding: 1.5rem;
+}
+
+.timelineCard span {
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+}
+
+.timelineCard h3 {
+  margin: 0.8rem 0 0.75rem;
+  font-size: 1.35rem;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .sectionGrid,
+  .timelineGrid {
+    grid-template-columns: 1fr;
+  }
+}

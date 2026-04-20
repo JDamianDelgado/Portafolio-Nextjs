@@ -1,0 +1,78 @@
+.cardProyecto {
+  display: grid;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.imageContenedor {
+  position: relative;
+  min-height: 260px;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: grid;
+  gap: 1rem;
+  padding: 1.4rem;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.badge {
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.65rem 0.95rem;
+  background: var(--surface-strong);
+  border: 1px solid var(--line);
+  font-weight: 700;
+}
+
+.link:hover {
+  transform: translateY(-2px);
+}
+
+.content h2 {
+  margin: 0;
+  font-size: 1.55rem;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.content p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.tags span {
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+  font-weight: 700;
+}

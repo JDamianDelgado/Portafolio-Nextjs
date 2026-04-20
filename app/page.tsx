@@ -1,65 +1,199 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { useLanguage } from "./components/language-provider";
+import styles from "./page.module.css";
 
 export default function Home() {
+  const { copy } = useLanguage();
+  const featuredProjects = copy.projects.slice(0, 3);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className={`pageShell ${styles.page}`}>
+      <section className={styles.hero}>
+        <motion.div
+          className={styles.heroCopy}
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+        >
+          <span className="sectionEyebrow">{copy.home.eyebrow}</span>
+          <h1 className={styles.heroTitle}>{copy.home.title}</h1>
+          <p className={styles.heroLead}>{copy.home.lead}</p>
+
+          <div className={styles.heroActions}>
+            <Link href="/proyectos" className={styles.primaryAction}>
+              {copy.home.primaryAction}
+            </Link>
+            <Link href="/contacto" className={styles.secondaryAction}>
+              {copy.home.secondaryAction}
+            </Link>
+          </div>
+
+          <div className={styles.statsGrid}>
+            {copy.home.heroStats.map((item, index) => (
+              <motion.div
+                key={item.label}
+                className={`${styles.statCard} glassPanel`}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: 0.15 + index * 0.12 }}
+              >
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className={`${styles.heroVisual} glassPanel`}
+          initial={{ opacity: 0, scale: 0.94 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.15 }}
+        >
+          <div className={styles.profileWrap}>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src="/perfil/image.jpeg"
+              alt="Foto de perfil de Joaquin Delgado"
+              fill
+              priority
+              sizes="(max-width: 1080px) 100vw, 40vw"
+              className={styles.profileImage}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+
+          <div className={styles.floatingNote}>
+            <span>{copy.home.floatingNoteLabel}</span>
+            <strong>{copy.home.floatingNoteTitle}</strong>
+          </div>
+
+          <div className={styles.heroRibbon}>
+            <span>React</span>
+            <span>Next.js</span>
+            <span>NestJS</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+          </div>
+        </motion.div>
+      </section>
+
+      <section className={styles.story}>
+        <div>
+          <span className="sectionEyebrow">{copy.home.storyEyebrow}</span>
+          <h2 className="sectionTitle">{copy.home.storyTitle}</h2>
         </div>
-      </main>
+
+        <div className={styles.storyGrid}>
+          {copy.home.presentation.map((item, index) => (
+            <motion.article
+              key={item.title}
+              className={`${styles.storyCard} glassPanel`}
+              initial={{ opacity: 0, y: 26 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.45, delay: index * 0.1 }}
+            >
+              <span className={styles.storyIndex}>0{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.featured}>
+        <div className={styles.sectionHeading}>
+          <div>
+            <span className="sectionEyebrow">{copy.home.featuredEyebrow}</span>
+            <h2 className="sectionTitle">{copy.home.featuredTitle}</h2>
+          </div>
+          <Link href="/proyectos" className={styles.inlineLink}>
+            {copy.home.featuredLink}
+          </Link>
+        </div>
+
+        <div className={styles.projectGrid}>
+          {featuredProjects.map((project, index) => (
+            <motion.article
+              key={project.slug}
+              className={`${styles.projectCard} glassPanel`}
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.45, delay: index * 0.12 }}
+            >
+              <div className={styles.projectImageWrap}>
+                <Image
+                  src={project.images}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 1080px) 100vw, 33vw"
+                  className={styles.projectImage}
+                />
+              </div>
+              <div className={styles.projectBody}>
+                <span>{project.technologies.slice(0, 3).join(" · ")}</span>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.inlineLink}
+                >
+                  {copy.home.openProject}
+                </a>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.techSection}>
+        <div className={styles.sectionHeading}>
+          <div>
+            <span className="sectionEyebrow">{copy.home.stackEyebrow}</span>
+            <h2 className="sectionTitle">{copy.home.stackTitle}</h2>
+          </div>
+          <p className="sectionLead">{copy.home.stackLead}</p>
+        </div>
+
+        <div className={styles.techGrid}>
+          {Object.entries(copy.technologies).map(([category, items], index) => (
+            <motion.article
+              key={category}
+              className={`${styles.techCard} glassPanel`}
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+            >
+              <h3>{formatCategory(category, copy.categories)}</h3>
+              <div className={styles.techList}>
+                {items.map((tech) => (
+                  <div key={tech.name} className={styles.techItem}>
+                    <Image
+                      src={tech.image}
+                      alt={tech.name}
+                      width={44}
+                      height={44}
+                      style={{ width: "auto", height: "auto" }}
+                    />
+                    <span>{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </section>
     </div>
   );
+}
+
+function formatCategory(category: string, labels: Record<string, string>) {
+  return labels[category] ?? category;
 }
