@@ -9,6 +9,22 @@ export const proyectos = [
     url: "https://portafolio-20-eta.vercel.app/",
   },
   {
+    slug: "explorer-countries",
+    title: "Explorer Countries – Next.js REST API App",
+    description:
+      "Aplicación web desarrollada con Next.js que permite explorar países, banderas y datos en tiempo real mediante integración con la REST Countries API. Incluye un sistema de búsqueda optimizado, renderizado dinámico de datos, diseño responsive con Tailwind CSS y animaciones fluidas utilizando Framer Motion. Además, cuenta con modales interactivos para visualizar información detallada de cada país y una interfaz moderna enfocada en la experiencia del usuario.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "REST Countries API",
+      "Vercel",
+    ],
+    images: "/image/proyectos/explorer-countries/image.png",
+    url: "https://explorer-countries-next-js-rest-api.vercel.app/",
+  },
+  {
     slug: "gestor-tareas-app",
     title: "Gestor de tareas con CRUD y estado",
     description:
