@@ -12,14 +12,17 @@ export default function Home() {
   const featuredProjects = copy.projects.slice(0, 3);
 
   useEffect(() => {
-    if (!sessionStorage.getItem("visit-registered")) {
-      fetch("https://contador-python-47oo.onrender.com/visita")
-        .then((res) => res.json())
-        .then((data) => {
-          console.log("Visita registrada:", data);
-          sessionStorage.setItem("visit-registered", "true");
-        })
-        .catch((err) => console.error("No se pudo registrar la visita:", err));
+    if (typeof window !== "undefined") {
+      if (!localStorage.getItem("visit-registered")) {
+        fetch("https://contador-python-47oo.onrender.com/visita")
+          .then((res) => res.json())
+          .then(() => {
+            localStorage.setItem("visit-registered", "true");
+          })
+          .catch((err) =>
+            console.error("No se pudo registrar la visita:", err),
+          );
+      }
     }
   }, []);
 
