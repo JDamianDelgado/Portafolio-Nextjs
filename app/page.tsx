@@ -5,10 +5,23 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLanguage } from "./components/language-provider";
 import styles from "./page.module.css";
+import { useEffect } from "react";
 
 export default function Home() {
   const { copy } = useLanguage();
   const featuredProjects = copy.projects.slice(0, 3);
+
+  useEffect(() => {
+    if (!sessionStorage.getItem("visit-registered")) {
+      fetch("https://contador-python-47oo.onrender.com/visita")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Visita registrada:", data);
+          sessionStorage.setItem("visit-registered", "true");
+        })
+        .catch((err) => console.error("No se pudo registrar la visita:", err));
+    }
+  }, []);
 
   return (
     <div className={`pageShell ${styles.page}`}>
