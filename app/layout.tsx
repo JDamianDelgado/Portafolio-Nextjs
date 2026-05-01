@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import FooterCopy from "./components/footer-copy";
 import { LanguageProvider } from "./components/language-provider";
 import { MetaPixel } from "./components/meta-pixel";
@@ -24,7 +24,9 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body suppressHydrationWarning>
-        <MetaPixel />
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
         <LanguageProvider>
           <Navbar />
           <main>{children}</main>
