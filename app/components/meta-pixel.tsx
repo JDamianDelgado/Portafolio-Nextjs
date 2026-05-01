@@ -12,7 +12,8 @@ declare global {
   }
 }
 
-const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+const rawPixelValue = process.env.NEXT_PUBLIC_META_PIXEL_ID;
+const pixelId = rawPixelValue?.match(/\d{8,}/)?.[0] ?? null;
 
 export function MetaPixel() {
   const pathname = usePathname();
