@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLanguage } from "../components/language-provider";
+import { trackMetaCustomEvent, trackMetaEvent } from "../lib/meta-pixel";
 import styles from "./page.module.css";
 
 export default function Contacto() {
@@ -24,6 +25,13 @@ export default function Contacto() {
               href={dato.href}
               target={dato.isEmail ? undefined : "_blank"}
               rel={dato.isEmail ? undefined : "noreferrer"}
+              onClick={() => {
+                trackMetaEvent("Contact", { channel: dato.platform });
+                trackMetaCustomEvent("ContactClick", {
+                  channel: dato.platform,
+                  destination: dato.href,
+                });
+              }}
               className={`${styles.card} glassPanel`}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
