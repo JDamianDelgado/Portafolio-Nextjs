@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import FooterCopy from "./components/footer-copy";
 import { LanguageProvider } from "./components/language-provider";
+import { MetaPixel } from "./components/meta-pixel";
 import Navbar from "./components/navbar";
 import "./globals.css";
 
@@ -17,8 +18,13 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html
+      lang="es"
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <body suppressHydrationWarning>
+        <MetaPixel />
         <LanguageProvider>
           <Navbar />
           <main>{children}</main>

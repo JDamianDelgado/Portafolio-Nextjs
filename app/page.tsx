@@ -14,14 +14,14 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       if (!localStorage.getItem("visit-registered")) {
-        fetch("https://contador-python-47oo.onrender.com/visita")
-          .then((res) => res.json())
+        fetch("/api/visit", {
+          method: "POST",
+          cache: "no-store",
+        })
           .then(() => {
             localStorage.setItem("visit-registered", "true");
           })
-          .catch((err) =>
-            console.error("No se pudo registrar la visita:", err),
-          );
+          .catch(() => {});
       }
     }
   }, []);
